@@ -1,16 +1,15 @@
 const { ChatGoogleGenerativeAI } = require('@langchain/google-genai');
-require('dotenv').config({ path: '../../.env' });
 
 /**
  * Initializes the LLM.
- * We use Gemini 1.5 Flash or Pro via the @langchain/google-genai integration.
+ * We use Gemini 3.1 Flash Lite via the @langchain/google-genai integration.
  */
 const getLLM = (temperature = 0.2) => {
   if (!process.env.LLM_API_KEY) {
     throw new Error('LLM_API_KEY environment variable is missing.');
   }
   return new ChatGoogleGenerativeAI({
-    modelName: 'gemini-1.5-flash',
+    model: 'gemini-3.1-flash-lite',
     apiKey: process.env.LLM_API_KEY,
     temperature: temperature,
   });

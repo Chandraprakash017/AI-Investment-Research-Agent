@@ -1,4 +1,3 @@
-require('dotenv').config({ path: '../../.env' });
 
 /**
  * Performs a web search using the Tavily API.
