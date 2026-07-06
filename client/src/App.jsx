@@ -166,7 +166,7 @@ function App() {
                             <div className="w-full bg-slate-800 rounded-full h-2 mb-2">
                               <div 
                                 className="bg-primary h-2 rounded-full" 
-                                style={{ width: \`\${data.score * 10}%\` }}
+                                style={{ width: `${data.score * 10}%` }}
                               ></div>
                             </div>
                             <p className="text-sm text-slate-400">{data.reasoning}</p>
