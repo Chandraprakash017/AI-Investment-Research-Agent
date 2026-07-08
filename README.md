@@ -314,14 +314,16 @@ The current version does not save previous reports. Adding persistence would imp
 
 ## 19. Deployment
 
-The application is designed to be deployed with:
+The application is deployed on Render as two services from the same GitHub repository:
 
-* **Backend**: Render
-* **Frontend**: Vercel
+- **Live Application**: https://investiq-agent.onrender.com
+- **Backend API**: https://investiq-agent-api.onrender.com
 
-The production frontend uses `VITE_API_URL` to connect to the deployed backend.
+The frontend is deployed as a Render Static Site, while the Node.js and Express backend runs as a Render Web Service.
 
-Live links will be added here after deployment.
+The production frontend uses `VITE_API_URL` to connect to the deployed backend API. The backend uses `CLIENT_URL` to allow requests from the production frontend.
+
+> **Note:** The backend runs on a free Render instance and may spin down after inactivity. The first analysis request after a period of inactivity can therefore take additional time while the service starts.
 
 ## 20. Disclaimer
 
